@@ -13,17 +13,28 @@ function addTask() {
     li.appendChild(span);
   }
   inputBox.value = "";
+  storeData();
 }
 
 listContainer.addEventListener(
   "click",
   function (e) {
-    console.log("Event listener callback executed!");
-    if (e.target.tagName === "li") {
+    if (e.target.tagName === "LI") {
       e.target.classList.toggle("checked");
-    } else if (e.target.tagName === "span") {
+      storeData();
+    } else if (e.target.tagName === "SPAN") {
       e.target.parentElement.remove();
+      storeData();
     }
   },
   false
 );
+
+function storeData() {
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function getData() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+getData();

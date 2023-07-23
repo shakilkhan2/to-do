@@ -39,6 +39,17 @@ border-radius: 10px;
   margin-bottom: 25px;
   
 }
+@media (max-width: 600px) {
+    .input-area {
+      flex-direction: column; /* Stack elements vertically */
+      padding: 10px; /* Adjust padding for better spacing */
+    }
+  
+    #input-box {
+      width: 100%; /* Make the input box full width */
+      margin-bottom: 15px; /* Add some spacing between input box and button */
+    }
+  }
 #input-box{
     flex: 1;
     border: none;
@@ -105,7 +116,7 @@ ul li span{
     color: #555;
     line-height: 40px;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 40px;
 }
 ul li span:hover{
     background: #edeef0;
